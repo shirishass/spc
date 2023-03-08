@@ -1,5 +1,5 @@
 pipeline {
-    agent {label 'openmrs'}
+    agent {label 'siri'}
     tools { maven 'MAVEN_3.6.3'
             jdk 'JDK_17'}
     stages {
