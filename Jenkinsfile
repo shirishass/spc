@@ -1,5 +1,7 @@
 pipeline {
     agent {label 'openmrs'}
+    tools { maven 'MAVEN_3.6.3'
+            jdk 'JDK_17'}
     stages {
         stage('vcs') {
             steps {
@@ -19,6 +21,6 @@ pipeline {
                     sh 'mvn clean package sonar:sonar -Dsonar.organization=shirisha'
                 }
             } 
-       }    
+        }    
     }
 }        
