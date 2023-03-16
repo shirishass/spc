@@ -3,7 +3,7 @@
   hosts: all
   become: yes
   vars:
-    Build_file: '/home/ubuntu/root/workspace/spring/target/spring-petclinic-3.0.0-SNAPSHOT.jar'
+    Build_file: '/home/jenkins/root/workspace/spring/target/spring-petclinic-3.0.0-SNAPSHOT.jar'
   tasks:
     - name: jar file
       ansible.builtin.copy:
