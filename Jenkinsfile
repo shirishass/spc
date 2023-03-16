@@ -23,15 +23,16 @@ pipeline {
                 }    
             }
         stage('collect file') {
-            agent { label 'siri' }
+            agent { label 'ansible' }
             steps {
                 unstash name: 'spc'
             }
         } 
         stage('deployment') {
-            agent { label 'siri' }
+            agent { label 'ansible' }
             steps {
                 sh 'ansible-playbook -i hosts spc.yml'
+                sh 'sudo systemctl status spc.service'
             }
         }          
     }
