@@ -8,7 +8,7 @@
     - name: jar file
       ansible.builtin.copy:
         src: "{{Build_file}}"
-        dest: "opt/spring-petclinic-3.0.0-SNAPSHOT.jar"
+        dest: "/opt/spring-petclinic-3.0.0-SNAPSHOT.jar"
     - name: copy spc.file 
       ansible.builtin.copy:
         src:  spc.service
