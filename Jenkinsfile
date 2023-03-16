@@ -21,7 +21,7 @@ pipeline {
                     includes: '**/target/spring-petclinic-3.0.0-SNAPSHOT.jar'
                 }    
             }
-        stage(collect file) {
+        stage('collect file') {
             agent { label 'siri' }
             steps {
                 name: 'spc'
