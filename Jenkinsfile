@@ -19,7 +19,7 @@ pipeline {
                                  onlyIfSuccessful: true
                 junit testResults: '**/surefire-reports/TEST-*.xml'
                 stash name: 'spc'
-                    includes: '**/target/spring-petclinic-3.0.0-SNAPSHOT.jar'
+                      includes: '**/target/spring-petclinic-3.0.0-SNAPSHOT.jar'
                 }    
             }
         stage('collect file') {
