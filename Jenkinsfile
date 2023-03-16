@@ -1,5 +1,6 @@
 pipeline {
     agent {label 'siri'} 
+        triggers { pollSCM ('* * * * *')}
     stages {
         stage('vcs') { 
             steps {
