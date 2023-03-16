@@ -19,7 +19,7 @@
         mode: '0644'
         state: file 
     - name: starting spc.file
-      anisible.bulitin.systemd:
+      anisible.builtin.systemd:
         name: spc.service
         enabled: yes
         state: started         
