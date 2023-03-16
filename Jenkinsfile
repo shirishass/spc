@@ -1,11 +1,11 @@
 pipeline {
     agent {label 'siri'} 
-        triggers { pollSCM ('* * * * *')}
+        triggers { pollSCM ('* * * * *') }
     stages {
         stage('vcs') { 
             steps {
                 git url: 'https://github.com/shirishass/spc.git',
-                branch: 'develop'
+                branch: 'release'
             } 
         }       
         stage('package') {
@@ -18,14 +18,14 @@ pipeline {
                  archiveArtifacts artifacts: '**/target/spring-petclinic-3.0.0-SNAPSHOT.jar',
                                  onlyIfSuccessful: true
                 junit testResults: '**/surefire-reports/TEST-*.xml'
-                name : 'spc'
+                stach name : 'spc'
                     includes: '**/target/spring-petclinic-3.0.0-SNAPSHOT.jar'
                 }    
             }
         stage('collect file') {
             agent { label 'siri' }
             steps {
-                name: 'spc'
+                unstach name: 'spc'
             }
         } 
         stage('deployment') {
