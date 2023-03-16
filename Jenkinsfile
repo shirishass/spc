@@ -22,11 +22,15 @@ pipeline {
                 }    
             }
         stage(collect file) {
+            agent { label 'siri' }
             steps {
                 name: 'spc'
             }
         } 
-          
+        stage('deployment') {
+            agent { label 'siri' }
+            steps {
+                sh 'ansible-playbook -i hosts spc.yml'  
     }
 
 }   
