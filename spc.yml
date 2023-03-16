@@ -3,7 +3,7 @@
   hosts: all
   become: yes
   vars:
-    Build_file: /home/ubuntu/root/workspace/spring/target/spring-petclinic-3.0.0-SNAPSHOT.jar
+    Build_file: '/home/ubuntu/root/workspace/spring/target/spring-petclinic-3.0.0-SNAPSHOT.jar'
   tasks:
     - name: jar file
       ansible.builtin.copy:
@@ -19,7 +19,7 @@
         mode: '0644'
         state: file 
     - name: starting spc.file
-      anisible.builtin.systemd:
+      ansible.builtin.systemd:
         name: spc.service
         enabled: yes
         state: started         
