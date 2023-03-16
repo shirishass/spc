@@ -15,7 +15,7 @@ pipeline {
         }  
         stage('post build') {
             steps {
-                 archiveArtifacts artifacts: '**/target/spring-petclinic-3.0.0-SNAPSHOT.jar',
+                archiveArtifacts artifacts: '**/target/spring-petclinic-3.0.0-SNAPSHOT.jar',
                                  onlyIfSuccessful: true
                 junit testResults: '**/surefire-reports/TEST-*.xml'
                 stash name: 'spc'
