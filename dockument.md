@@ -188,6 +188,7 @@ pipeline {
  * run the multibranch pipeline then get the output.
  ![preview](images/scc4.png)
  * now browse in web nodeip and port:8080 we see the spring petclinic page.
+  ![preview](images/scc6.png)
 
 
 
