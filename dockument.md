@@ -6,8 +6,8 @@
   * java -jar target/*.jar
   ### freestyle method:
   * Take spc github project and fork the repository create feature branch in your repository
-    write a jenkins pipeline for spring petclinic project in feature branch
-  * If any changes are done then send a pull request to main branch then admin of that repository can accept your        request  instead of merging they check and run your pipeline after that only they merge.
+  * write a jenkins pipeline for spring petclinic project in feature branch
+  * If any changes are done then send a pull request to main branch then admin of that repository can accept your  request  instead of merging they check and run the pipeline after that they merge pull request.
 
 ```
 pipeline {
@@ -24,13 +24,6 @@ pipeline {
                 sh 'mvn package'
             }
         } 
-        stage('post build') {
-            steps {
-                archiveArtifacts artifacts: '**/target/spring-petclinic-3.0.0-SNAPSHOT.jar',
-                                 onlyIfSuccessful: true
-                junit testResults: '**/surefire-reports/TEST-*.xml'
-            }
-        }  
     }
 }   
 ```
@@ -43,6 +36,7 @@ pipeline {
  * Click on Manage jenkins → Manage Credentials and give credentials for node
  * Give a connection between github and jenkins through credentials with github token for that generate a token in github
  * Go to settings in github → developer settings → personal access token → generate token
+ ![preview](images/scc5.png) 
  * By using the token add credetials in jenkins
  * Now configure the project by givinig required details
  * create a pull request in git hub
@@ -183,7 +177,7 @@ pipeline {
  * these all playbook and hosts file service file all are kept in release branch
  * run the multibranch pipeline then get the output.
  ![preview](images/scc4.png)
- * now browsw in web nodeip and port:8080 we see the spring petclinic page
+ * now browse in web nodeip and port:8080 we see the spring petclinic page.
 
 
 
