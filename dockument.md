@@ -47,7 +47,7 @@ pipeline {
  * Give a connection between github and jenkins through credentials with github token for that generate a token in github
  * Go to settings in github → developer settings → personal access token → generate token
  ![preview](images/scc5.png) 
- * By using the token add credetials in jenkins
+ * By using the token add credentials in jenkins
  * Now configure the project by givinig required details
  * create a pull request in git hub
  * ensure once it automatically trigger in jenkins (it will not trigger)
