@@ -30,14 +30,16 @@ pipeline {
 
  * Send pull request to targetted repository 
  * Take master vm and install java , maven & jenkins
- * installation of java
+ * installation of java:
     * sudo apt update
     * sudo apt install openjdk-17-jdk -y
     * java --version
- * maven installation
+   
+ * maven installation:
     * sudo apt update
     * sudo apt install maven -y
-    * mvn --version  
+    * mvn --version 
+      
  * For jenkins installtion [refer here](https://www.jenkins.io/doc/book/installing/linux/)
  * After login into jenkins create a freestyle project
  ![preview](images/spc1.png)
